@@ -17,7 +17,7 @@ server.start(
   },
   message => {
     console.log(
-      `Server is now runnin on port https://localhost:${message.port}`
+      `Server is now runnin on port http://localhost:${message.port}`
     );
   }
 );

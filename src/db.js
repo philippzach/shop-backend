@@ -1,4 +1,4 @@
-//This file connect  to the remot eprimsa db and gives us the ability to quert it with JS
+//This file connects to the remote prisma db and gives us the ability to query it with JS
 const { Prisma } = require('prisma-binding');
 
 const db = new Prisma({
