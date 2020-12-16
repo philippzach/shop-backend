@@ -24,6 +24,8 @@ type Mutation {
   ): User!
   updatePermissions(permissions: [Permission], userId: ID!): User
   addAdminRights(email: String!, permissions: [Permission]): User
+  addToCart(id: ID!): CartItem
+  removeFromCart(id: ID!): CartItem
 }
 type Query {
   items(
@@ -43,4 +45,5 @@ type User {
   name: String!
   email: String!
   permissions: [Permission!]!
+  cart: [CartItem!]!
 }
