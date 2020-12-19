@@ -5,7 +5,7 @@ const createServer = require('./createServer');
 const bodyParser = require("body-parser");
 const db = require('./db');
 const jwt = require('jsonwebtoken');
-const stripe = require('stripe')(process.env.STRIPE_SECRET);
+//const stripe = require('stripe')(process.env.STRIPE_SECRET);
 
 const server = createServer();
 
@@ -39,7 +39,7 @@ server.express.use(async (req, res, next) => {
   next();
 });
 
-server.post('/create-checkout-session', async (req, res) => {
+/* server.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: req.body,
@@ -48,7 +48,7 @@ server.post('/create-checkout-session', async (req, res) => {
     cancel_url: `${process.env.FRONTEND_URL}?canceled=true`,
   });
   res.json({ id: session.id });
-});
+}); */
 
 server.start(
   {
