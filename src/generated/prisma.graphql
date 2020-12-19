@@ -1,5 +1,5 @@
-# source: https://eu1.prisma.sh/philipp-zach-d8ce33/advanced-react/dev
-# timestamp: Thu Dec 17 2020 20:43:11 GMT-0400 (Bolivia Time)
+# source: https://shiva-store-prod-7d07d18930.herokuapp.com/shiva-store/prod
+# timestamp: Sat Dec 19 2020 11:53:48 GMT-0400 (Bolivia Time)
 
 type AggregateCartItem {
   count: Int!
@@ -834,8 +834,6 @@ input OrderCreateInput {
   id: ID
   total: Int!
   charge: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   items: OrderItemCreateManyInput
   user: UserCreateOneInput!
 }
@@ -1605,8 +1603,6 @@ input OrderSubscriptionWhereInput {
 input OrderUpdateInput {
   total: Int
   charge: String
-  createdAt: DateTime
-  updatedAt: DateTime
   items: OrderItemUpdateManyInput
   user: UserUpdateOneRequiredInput
 }
@@ -1614,8 +1610,6 @@ input OrderUpdateInput {
 input OrderUpdateManyMutationInput {
   total: Int
   charge: String
-  createdAt: DateTime
-  updatedAt: DateTime
 }
 
 input OrderWhereInput {
