@@ -6,14 +6,14 @@ const {transport, makeANiceEmail} = require('../mail');
 const { hasPermission } = require('../utils');
 
 const Mutations = {
-  async addAdminRights(parent, args, ctx, info) {
+  /* async addAdminRights(parent, args, ctx, info) {
     //Get the user
     const update = await ctx.db.mutation.updateUser({
       data: {  permissions: { set: ['ADMIN', 'USER'] }},
       where: {email: args.email}
     }, info);
     return update
-  },
+  }, */
   async createItem(parent, args, ctx, info) {
     // TODO Check if they are logged in
     if(!ctx.request.userId) {
@@ -104,6 +104,7 @@ const Mutations = {
       //generatr the JWT toeken
       const token = jwt.sign({userId: user.id}, process.env.APP_SECRET)
       //set the cookie with the toekn
+      console.log(token)
       ctx.response.cookie('token', token, {
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 365, //1 Year Cookie = 100ms * 60/min * 60/h * 24/day * 365/year
