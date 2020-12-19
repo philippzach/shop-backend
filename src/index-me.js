@@ -1,9 +1,9 @@
 // let's go!
 const cookieParser = require('cookie-parser')
 require('dotenv').config({ path: 'variables.env' });
-const createServer = require('./createServer');
+const createServer = require('./createServer-me');
 const bodyParser = require("body-parser");
-const db = require('./db');
+const db = require('./db-me');
 const jwt = require('jsonwebtoken');
 //const stripe = require('stripe')(process.env.STRIPE_SECRET);
 
