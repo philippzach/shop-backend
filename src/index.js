@@ -20,7 +20,7 @@ server.express.use(cookieParser())
 server.express.use((req, res, next)=> {
   const {token} = req.cookies;
 if(token) {
-  const {userId} = jwt.verify(token, process.env.APP_SECRET)
+  const {userId} = jwt.verify(token, 'shhhhh')
   //put the user id on to the request or further request to access
   req.userId= userId
 }
@@ -51,12 +51,12 @@ server.express.use(async (req, res, next) => {
 }); */
 
 server.start(
-  {
+ /*  {
     cors: {
       credentials: true,
       origin: process.env.FRONTEND_URL
     }
-  },
+  }, */
   message => {
     console.log(
       `Server is now runnin on port http://localhost:${message.port}`
