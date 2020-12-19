@@ -1,4 +1,3 @@
-require('dotenv').config({ path: 'variables.env' });
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {randomBytes} = require('crypto')
@@ -80,7 +79,7 @@ const Mutations = {
       }
     }, info);
     //create the JWT token for them
-    const token = jwt.sign({userId: user.id}, process.env.APP_SECRET)
+    const token = jwt.sign({userId: user.id}, 'shhhhh')
     //we set the jwt as a cookie on the response
     ctx.response.cookie('token', token, {
     httpOnly: true,
@@ -103,7 +102,7 @@ const Mutations = {
         throw new Error('Invalid Password')
       }
       //generatr the JWT toeken
-      const token = jwt.sign({userId: user.id}, process.env.APP_SECRET)
+      const token = jwt.sign({userId: user.id}, 'shhhhh')
       //set the cookie with the toekn
       ctx.response.cookie('token', token, {
         httpOnly: true,
@@ -172,7 +171,7 @@ const Mutations = {
       data: {password: password, resetToken: null, resetTokenExpiry: null}
     })
     //6 Generate JWT
-    const token = jwt.sign({userId: updatedUser.id}, process.env.APP_SECRET)
+    const token = jwt.sign({userId: updatedUser.id}, 'shhhhh')
     //7 Set the JWT Cookie
     ctx.response.cookie('token', token, {
       httpOnly: true,
