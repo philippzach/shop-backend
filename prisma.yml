@@ -1,8 +1,9 @@
 #endpoint: ${env:PRISMA_ENDPOINT}
 #endpoint: https://shiva-store-prod-7d07d18930.herokuapp.com/shiva-store-prod/prod
-endpoint: https://shiva-store-prod-7d07d18930.herokuapp.com/shiva-store/prod
+#endpoint: https://shiva-store-prod-7d07d18930.herokuapp.com/shiva-store/prod
+endpoint: https://shiva-store-486fc9ff8a.herokuapp.com/shiva-store-prod/prod
 datamodel: datamodel.graphql
-secret: ${env:PRISMA_SECRET}
+#secret: ${env:PRISMA_SECRET}
 hooks:
   post-deploy:
     - graphql get-schema -p prisma
