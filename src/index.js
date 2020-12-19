@@ -5,7 +5,8 @@ const createServer = require('./createServer');
 const bodyParser = require("body-parser");
 const db = require('./db');
 const jwt = require('jsonwebtoken');
-const stripe = require('./stripe');
+const Stripe = require('stripe');
+const stripe = Stripe(process.env.STRIPE_SECRET);
 
 const server = createServer();
 

@@ -4,8 +4,7 @@ const {randomBytes} = require('crypto')
 const {promisify} = require('util')
 const {transport, makeANiceEmail} = require('../mail');
 const { hasPermission } = require('../utils');
-const { createBrotliDecompress } = require('zlib');
-const stripe = require('../stripe');
+
 
 const Mutations = {
   async addAdminRights(parent, args, ctx, info) {
