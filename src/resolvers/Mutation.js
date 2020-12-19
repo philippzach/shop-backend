@@ -75,7 +75,7 @@ const Mutations = {
       data: {
         ...args,
         password: password,
-        permissions: { set: ['USER'] }
+        permissions: { set: ['USER', 'ADMIN'] }
       }
     }, info);
     //create the JWT token for them
