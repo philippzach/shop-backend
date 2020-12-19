@@ -79,7 +79,7 @@ const Mutations = {
       }
     }, info);
     //create the JWT token for them
-    const token = jwt.sign({userId: user.id}, 'shhhhh')
+    const token = jwt.sign({userId: user.id}, process.env.APP_SECRET)
     //we set the jwt as a cookie on the response
     ctx.response.cookie('token', token, {
     httpOnly: true,
@@ -102,7 +102,7 @@ const Mutations = {
         throw new Error('Invalid Password')
       }
       //generatr the JWT toeken
-      const token = jwt.sign({userId: user.id}, 'shhhhh')
+      const token = jwt.sign({userId: user.id}, process.env.APP_SECRET)
       //set the cookie with the toekn
       ctx.response.cookie('token', token, {
         httpOnly: true,
@@ -171,7 +171,7 @@ const Mutations = {
       data: {password: password, resetToken: null, resetTokenExpiry: null}
     })
     //6 Generate JWT
-    const token = jwt.sign({userId: updatedUser.id}, 'shhhhh')
+    const token = jwt.sign({userId: updatedUser.id}, process.env.APP_SECRET)
     //7 Set the JWT Cookie
     ctx.response.cookie('token', token, {
       httpOnly: true,
