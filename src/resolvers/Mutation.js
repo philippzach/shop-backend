@@ -1,10 +1,10 @@
+require('dotenv').config({ path: 'variables.env' });
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {randomBytes} = require('crypto')
 const {promisify} = require('util')
 const {transport, makeANiceEmail} = require('../mail');
 const { hasPermission } = require('../utils');
-
 
 const Mutations = {
   async addAdminRights(parent, args, ctx, info) {
